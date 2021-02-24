@@ -6,9 +6,11 @@ router general
 {%          for vrf in router_general.vrfs %}
    vrf {{ vrf }}
 {%              if router_general.vrfs[vrf].leak is arista.avd.defined %}
-{%                  if router_general.vrfs[vrf].leak.source_vrf is arista.avd.defined and router_general.vrfs[vrf].leak.policy is arista.avd.defined %}
-      leak routes source-vrf {{ router_general.vrfs[vrf].leak.source_vrf }} subscribe-policy {{ router_general.vrfs[vrf].leak.policy }}
-{%                  endif %}
+{%                  for leak_data in router_general.vrfs[vrf].leak %}
+{%                      if leak_data.source_vrf is arista.avd.defined and leak_data.policy is arista.avd.defined %}
+      leak routes source-vrf {{ leak_data.source_vrf }} subscribe-policy {{ leak_data.policy }}
+{%                      endif %}
+{%                  endfor %}
 {%              endif %}
    !
 {%          endfor %}

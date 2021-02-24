@@ -105,7 +105,42 @@
     - [Terminal Settings](#terminal-settings)
     - [Virtual Source NAT](#virtual-source-nat)
     - [VLANs](#vlans)
-  - [License](#license)
+    - [IPv6 Extended Access-Lists](#ipv6-extended-access-lists)
+    - [IPv6 Standard Access-Lists](#ipv6-standard-access-lists)
+    - [IP Extended Access-Lists](#ip-extended-access-lists)
+    - [IP Standard Access-Lists](#ip-standard-access-lists)
+    - [Static Routes](#static-routes)
+    - [IPv6 Static Routes](#ipv6-static-routes)
+    - [IP Routing](#ip-routing)
+    - [ARP](#arp)
+    - [Prefix Lists](#prefix-lists)
+    - [IPv6 Prefix Lists](#ipv6-prefix-lists)
+    - [IPv6 Routing](#ipv6-routing)
+    - [MLAG Configuration](#mlag-configuration)
+    - [Community Lists](#community-lists)
+    - [IP Extended Community Lists](#ip-extended-community-lists)
+    - [Route Maps](#route-maps)
+    - [Peer Filters](#peer-filters)
+    - [Router BGP Configuration](#router-bgp-configuration)
+    - [Router Multicast](#router-multicast)
+    - [Router General configuration](#router-general-configuration)
+    - [Router OSPF Configuration](#router-ospf-configuration)
+    - [Routing PIM Sparse Mode](#routing-pim-sparse-mode)
+    - [Router ISIS Configuration](#router-isis-configuration)
+    - [Queue Monitor Streaming](#queue-monitor-streaming)
+    - [IP TACACS+ Source Interfaces](#ip-tacacs-source-interfaces)
+    - [VM Tracer Sessions](#vm-tracer-sessions)
+    - [Banners](#banners)
+    - [HTTP Management API](#http-management-api)
+    - [GNMI Management API](#gnmi-management-api)
+    - [Management Console](#management-console)
+    - [Management Security](#management-security)
+    - [Management SSH](#management-ssh)
+    - [QOS](#qos)
+    - [QOS Profiles](#qos-profiles)
+    - [PTP](#ptp)
+    - [Custom Templates](#custom-templates)
+    - [License](#license)
 
 ## Overview
 
@@ -1706,7 +1741,30 @@ router_bgp:
           route_map: < route_map_name >
 ```
 
+<<<<<<< HEAD
 #### Router OSPF Configuration
+=======
+### Router Multicast
+
+```yaml
+router_multicast:
+  ipv4:
+    routing: < true | false >
+```
+
+### Router General configuration
+
+```yaml
+router_general:
+  vrfs:
+    < destination-vrf >:
+      leak:
+        source_vrf: < source-vrf >
+        policy: < route-map policy >
+```
+
+### Router OSPF Configuration
+>>>>>>> features/vrf-leaking
 
 ```yaml
 router_ospf:
